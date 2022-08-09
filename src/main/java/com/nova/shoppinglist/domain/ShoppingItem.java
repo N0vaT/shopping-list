@@ -10,9 +10,11 @@ public class ShoppingItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "shopping_item_id")
     private Long id;
-
     @Column(name = "shopping_item_name")
     private String name;
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+    @JoinColumn(name = "shopping_item_user_id")
+    private User user;
 
     public ShoppingItem() {
     }
@@ -31,5 +33,13 @@ public class ShoppingItem {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
