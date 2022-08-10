@@ -15,7 +15,7 @@ public class User {
     private String userName;
     @Column(name = "user_password")
     private String userPassword;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user", orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
     private List<ShoppingItem> shoppingItems;
 
     public User() {

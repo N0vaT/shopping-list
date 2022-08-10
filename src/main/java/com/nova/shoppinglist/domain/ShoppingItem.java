@@ -9,10 +9,10 @@ public class ShoppingItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "shopping_item_id")
-    private Long id;
+    private Long Id;
     @Column(name = "shopping_item_name")
     private String name;
-    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "shopping_item_user_id")
     private User user;
 
@@ -20,11 +20,11 @@ public class ShoppingItem {
     }
 
     public Long getId() {
-        return id;
+        return Id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        Id = id;
     }
 
     public String getName() {

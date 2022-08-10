@@ -5,7 +5,7 @@ CREATE TABLE users
 (
     user_id SERIAL,
     user_name varchar(20) not null,
-    user_password varchar(20) not null,
+    user_password varchar(100) not null,
     PRIMARY KEY (user_id),
     UNIQUE (user_name)
 );
